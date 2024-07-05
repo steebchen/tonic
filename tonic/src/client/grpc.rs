@@ -48,7 +48,7 @@ struct GrpcConfig {
 impl<T> Grpc<T> {
     /// Creates a new gRPC client with the provided [`GrpcService`].
     pub fn new(inner: T) -> Self {
-        Self::with_origin(inner, Uri::default())
+        Self::with_origin(inner, Uri::from_static("/x/spawn-and-move-cubzh/torii")) // FIXME: use uri
     }
 
     /// Creates a new gRPC client with the provided [`GrpcService`] and `Uri`.
